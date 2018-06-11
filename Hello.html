@@ -1,15 +1,25 @@
 <html>
 <title>Dim Dam</title>
-<body onclick="hello();">
+<body>
 <H1>Hello Prateek... <br>this the Welcome Helow Note...</H1>
 
 </body>
 <script language="javascript">
 function hello()
 {
-alert("Hello Chandan.... Welcome to the World of PROGRAMMING");
+ var x = document.getElementsByName("fname")[0].value;
+alert("Your entered First Name as : " + x);
+document.getElementById("demo").innerHTML = "Your First name is:  " + x;
+}
+function clearTextbox()
+{
+   var x = document.getElementById("demo");
+    x.value = x.value.toUpperCase();
 }
 </script>
-<input type="text" width=30 /> 
+Name: <input type="text" width=30 name="fname" onfocusout="clearTextbox()"/> 
+<p/>
+<input type="button" name="submit" value="submit"  onclick="hello();"/>
 
+<p id="demo"></p>
 </html>
